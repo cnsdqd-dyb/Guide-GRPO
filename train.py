@@ -216,8 +216,9 @@ def generate_segment_completions(
     while True:
         attempt += 1
         if attempt > max_attempts:
-            raise RuntimeError(f"Failed to generate valid prefix after {max_attempts} attempts")
-        
+            # raise RuntimeError(f"Failed to generate valid prefix after {max_attempts} attempts")
+            prompt_prefix_ids = prompt_ids
+            break
         # max_new_prefix_length
         with torch.inference_mode():
             prompt_prefix_ids = model.generate(
@@ -235,7 +236,9 @@ def generate_segment_completions(
             break
         
         print(f"Retrying prefix generation... (attempt {attempt}/{max_attempts})")
-        max_new_prefix_length = max(max_new_prefix_length - random.randint(max_new_prefix_length//8, max_new_prefix_length//2), 0)
+        max_new_prefix_length = min(max_new_prefix_length//2, prompt_prefix_ids.size(1) - prompt_ids.size(1))
+        # Shorten prefix length and retry to avoid prefix finishing the whole completion
+        max_new_prefix_length = max(max_new_prefix_length-random.randint(max_new_prefix_length//8, max_new_prefix_length//2), 1)
         generation_config_prefix.max_new_tokens = max_new_prefix_length
     
     # prompt_prefix_ids cut to the last punctuation
