@@ -1,4 +1,4 @@
-# Guide-GRPO: Guided Group Related Policy Optimization 🚀
+# Guide-GRPO: LLM Reasoning Enhancement Inspired by DeepSeek 🚀
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -7,7 +7,6 @@
 ## TL;DR
 This project explores an approach to language model optimization by focusing on guidance tokens in reasoning chains. Building upon the [DeepSeekRL-Extended](https://github.com/brendanhogan/DeepSeekRL-Extended) framework, we investigate how strategic token generation might improve model reasoning capabilities. Our implementation aims to be memory-efficient, requiring only 24GB GPU VRAM for training, making it accessible for research on consumer-grade hardware.
 
-The modified TL;DR now explicitly mentions the memory requirements, highlighting the accessibility aspect of the project. Would you like me to make any other adjustments to emphasize specific aspects of the project?
 
 ## 🔍 Motivation
 Language models often struggle with maintaining consistent reasoning chains in their responses. We hypothesize that by explicitly focusing on key transition points (guidance tokens) in the generation process, we might be able to improve the coherence and accuracy of model outputs. This project is currently in an experimental phase, aiming to test this hypothesis.
