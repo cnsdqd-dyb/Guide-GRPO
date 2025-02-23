@@ -90,7 +90,7 @@ Note: Initial experimental results, pending further validation and testing. More
 
 ```bibtex
 @misc{guide-grpo,
-  title={Guide-GRPO: Group Related Policy Optimization},
+  title={Guide-GRPO: LLM Reasoning Enhancement Inspired by DeepSeek},
   author={dongyubo},
   year={2025},
   publisher={GitHub}}
