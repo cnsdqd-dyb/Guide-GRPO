@@ -118,4 +118,4 @@ We welcome contributions and feedback! Please feel free to submit a Pull Request
 
 ---
 
-<p align="center">Made with ❤️ by ZJU-ReLU Lab</p>
+<p align="center">Made with ❤️ by ReLER Lab</p>
